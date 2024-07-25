@@ -1,7 +1,7 @@
 // Initial array of quotes loaded from local storage or default quotes
 let quotes = JSON.parse(localStorage.getItem('quotes')) || [
     { text: "When you change your thoughts, remember to also change your world.", category: "Motivation" },
-    { text: "Education is the most powerful weapon which you can use to change the world.", category: "students" },
+    { text: "Education is the most powerful weapon which you can use to change the world.", category: "Students" },
     { text: "Experience is a hard teacher because she gives the test first, the lesson afterward.", category: "Life" }
 ];
 
@@ -159,4 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lastViewedQuote) {
         displayQuote(lastViewedQuote);
     }
+
+    // Apply last selected category filter
+    filterQuotes();
 });
