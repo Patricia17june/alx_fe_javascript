@@ -185,7 +185,7 @@ async function syncQuotesWithServer() {
     if (JSON.stringify(uniqueQuotes) !== JSON.stringify(localQuotes)) {
         localStorage.setItem('quotes', JSON.stringify(uniqueQuotes));
         quotes = uniqueQuotes;
-        notifyUser('Data has been updated from the server.');
+        notifyUser('Quotes synced with server!');
     }
 }
 
