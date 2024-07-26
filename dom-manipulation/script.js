@@ -150,16 +150,13 @@ function filterQuotes() {
 document.getElementById('newQuote').addEventListener('click', showRandomQuote);
 document.getElementById('exportQuotes').addEventListener('click', exportToJsonFile);
 document.addEventListener('DOMContentLoaded', () => {
-    showRandomQuote(); // Display an initial quote
     createAddQuoteForm(); // Create the form for adding new quotes
     populateCategoryFilter(); // Populate category filter
+    filterQuotes(); // Apply last selected category filter
 
     // Display the last viewed quote from session storage if it exists
     const lastViewedQuote = JSON.parse(sessionStorage.getItem('lastViewedQuote'));
     if (lastViewedQuote) {
         displayQuote(lastViewedQuote);
     }
-
-    // Apply last selected category filter
-    filterQuotes();
 });
